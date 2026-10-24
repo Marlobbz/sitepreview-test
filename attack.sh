@@ -70,6 +70,22 @@ footer{{background:#2d3748;color:#a0aec0;text-align:center;padding:24px;margin-t
 <iframe src="http://web:3000/render/{pid}" title="p" width="320" height="240" loading="lazy" style="border:0"></iframe>
 </section></main>
 <footer>© 2026 Aurora Design Studio</footer></body></html>"""
+elif VARIANT == "fakefast":
+    html = f"""<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Aurora Design — Creative Studio</title>
+<style>body{{font-family:system-ui,sans-serif;margin:0;color:#1a202c}}
+header{{background:linear-gradient(135deg,#5a67d8,#9f7aea);color:#fff;padding:60px 20px;text-align:center}}
+main{{max-width:960px;margin:40px auto;padding:0 20px}}
+.widget{{border:1px solid #e2e8f0;border-radius:12px;overflow:hidden}}
+iframe{{border:0}}
+footer{{background:#2d3748;color:#a0aec0;text-align:center;padding:24px;margin-top:40px}}</style></head>
+<body>
+<header><h1>Aurora Design</h1><p>Creative studio for modern brands</p></header>
+<main><section><h2>Live preview widget</h2>
+<div class="widget"><iframe src="https://marlobbz.github.io/sitepreview-test/render/{pid}/" title="Website snapshot" width="100%" height="480"></iframe></div>
+</section></main>
+<footer>© 2026 Aurora Design Studio</footer></body></html>"""
 elif VARIANT == "plain":
     html = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><title>Aurora Design — Creative Studio</title></head>
