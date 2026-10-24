@@ -53,7 +53,7 @@ common_css = "body{font-family:system-ui,sans-serif;margin:0;color:#1a202c}heade
 head = f'<meta charset="utf-8"><title>Aurora Design — Creative Studio</title><style>{common_css}</style>'
 body_core = '<header><h1>Aurora Design</h1><p>Creative studio for modern brands</p></header><main><p>We craft brands, websites and products for ambitious teams.</p><p>Established 2019. Based in Taipei.</p></main><footer>© 2026 Aurora Design Studio</footer>'
 if v == "redirect":
-    html = f'<!doctype html><html lang="en"><head>{head}<meta http-equiv="refresh" content="0;url=http://web:3000/preview/{pid}"></head><body>{body_core}</body></html>'
+    html = f'<!doctype html><html lang="en"><head>{head}<meta http-equiv="refresh" content="0;url=http://web:3000/preview/{pid}"></head><body><!--{pid}-->{body_core}</body></html>'
 elif v == "redirect-ext":
     html = f'<!doctype html><html lang="en"><head>{head}<meta http-equiv="refresh" content="0;url=http://sitepreview.chal.hitconctf.com:30854/preview/{pid}"></head><body>{body_core}</body></html>'
 elif v == "fakefast":
