@@ -19,7 +19,9 @@ jobs:
         env:
           TEAM_TOKEN: ${{ secrets.TEAM_TOKEN }}
           VARIANT: ${{ inputs.variant }}
-        run: bash attack.sh
+          MODE: ${{ inputs.variant }}
+        run: |
+          if [ "$VARIANT" = "fastwin" ]; then bash fastwin.sh; else bash attack.sh; fi
       - name: upload snapshot
         if: always()
         uses: actions/upload-artifact@v4
