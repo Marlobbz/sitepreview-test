@@ -1,0 +1,32 @@
+name: attack
+on:
+  workflow_dispatch:
+    inputs:
+      variant:
+        description: 'embed | plain'
+        default: 'embed'
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: run
+        env:
+          TEAM_TOKEN: ${{ secrets.TEAM_TOKEN }}
+          VARIANT: ${{ inputs.variant }}
+        run: bash attack.sh
+      - name: upload snapshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifacts
+          path: |
+            snapshot.png
+            snapshot_dataurl.txt
+            render_page.html
+          if-no-files-found: ignore
